@@ -1,0 +1,5 @@
+Atlantic_FD_decisions = {
+	icon = usa_intervention_mandate
+
+	picture = GFX_Atlantic_FD_decision_category_pic
+}

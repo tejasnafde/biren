@@ -1,0 +1,693 @@
+Barb_Dec = {
+	#Soviet Branch
+	Barb_Dec_Sov_decision_I = {
+
+		icon = generic
+
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			NOT = {
+				206 = { is_controlled_by_ROOT_or_ally = yes }
+				202 = { is_controlled_by_ROOT_or_ally = yes }
+				195 = { is_controlled_by_ROOT_or_ally = yes }
+				219 = { is_controlled_by_ROOT_or_ally = yes }
+				217 = { is_controlled_by_ROOT_or_ally = yes }
+			}
+						
+			if = {
+				limit = {
+					original_tag = SOV
+					NOT = { has_global_flag = Barb_Dec_Barb_End}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Ind_tt_01
+					always = yes
+				} 
+			}
+		}
+
+		days_mission_timeout = 420 #14 Months
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = yes
+
+		complete_effect = {
+			SOV = {
+			    add_ideas = { 
+					Barb_Dec_Sov_Red_Army_has_been_destroyed
+				}
+				remove_ideas = { 
+					Barb_Dec_Sov_War_Effort
+					Barb_Dec_Sov_Chaos_in_Red_Army
+					Barb_Dec_Sov_AI_buff_dynamic
+				} 
+			}			
+        }
+		
+		timeout_effect = {
+			SOV = {
+			    add_timed_idea = { idea = Barb_Dec_Sov_Reorganization_in_Red_Army days = 540 } #18 Months
+				activate_mission = Barb_Dec_Sov_decision_II
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	Barb_Dec_Sov_decision_II = {
+
+		icon = generic
+
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			NOT = {
+				206 = { is_controlled_by_ROOT_or_ally = yes }
+				202 = { is_controlled_by_ROOT_or_ally = yes }
+				195 = { is_controlled_by_ROOT_or_ally = yes }
+				219 = { is_controlled_by_ROOT_or_ally = yes }
+				217 = { is_controlled_by_ROOT_or_ally = yes }
+			}
+
+			if = {
+				limit = {
+					original_tag = SOV
+					NOT = { has_global_flag = Barb_Dec_Barb_End}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Ind_tt_01
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Ind_tt_01
+						always = no
+					}
+				}
+			}
+		}
+
+		days_mission_timeout = 540 #18 Months
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = yes
+
+		complete_effect = {
+			SOV = {
+			    # add_ideas = { 
+				# 	Barb_Dec_Sov_Red_Army_has_been_destroyed
+				# }
+				remove_ideas = { 
+					Barb_Dec_Sov_War_Effort
+					Barb_Dec_Sov_Reorganization_in_Red_Army
+				} 
+			}			
+        }
+		
+		timeout_effect = {
+			SOV = {
+			    add_ideas = { 
+					Barb_Dec_Sov_Reorganized_Red_Army
+				} 
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Soviet Division Spawn Decision
+	Barb_Dec_Sov_division_spawn_megapolis = { #Megapolis Region
+		icon = GFX_decision_generic_civil_support
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = core_states
+				
+		target_trigger = {
+			FROM = { #FROM HOOKS THE STATE
+				impassable = no
+				is_owned_by = ROOT
+				has_state_category = megalopolis
+				# has_state_category = metropolis
+				# has_state_category = city
+			}
+		}
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			ROOT = { 
+				has_government = communism #This is a must, Britain must be democratic!
+				has_global_flag = Barb_Dec_Barb_started #The barb operation must have started
+			} 
+			GER = { has_government = fascism } #Germany must be fascist			
+		}
+
+		custom_cost_trigger = {
+			command_power > 59
+		}
+
+		custom_cost_text = Barb_Dec_Sov_division_spawn_megapolis_decision_cost
+
+		available = { 
+			if = { #can be fired just for once!
+				limit = {
+					FROM = { NOT = { has_state_flag = Barb_Dec_Sov_division_spawn_done } } 
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+						always = no
+					}
+				}
+			}
+
+			if = { #the enemy must be near
+				limit = {
+					FROM = { 
+						OR = {
+							any_neighbor_state = {
+								CONTROLLER = {
+									has_war_with = ROOT
+								}
+								OWNER = { tag = ROOT }
+							}
+							NOT = { is_fully_controlled_by = ROOT }
+						}
+					}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+						always = no
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -60
+
+			custom_effect_tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_03 #defined in localisation file
+			hidden_effect = {
+				FROM = { set_state_flag = Barb_Dec_Sov_division_spawn_done }
+				ROOT = {
+					division_template = {
+						name = "Defender of the Motherland"
+
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							artillery_brigade = { x = 3 y = 0 }
+							artillery_brigade = { x = 3 y = 1 }
+							artillery_brigade = { x = 3 y = 2 }
+						}
+					
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							logistics_company = { x = 0 y = 2 }
+							anti_tank = { x = 0 y = 3 }
+							anti_air = { x = 0 y = 4 }
+						}
+					}
+				}
+				FROM = { #creating div, already defined above
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+	
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+				}				
+			}	
+        }
+
+		ai_will_do = {
+			factor = 800
+
+			modifier = {
+				factor = 0
+				command_power < 70
+			}
+		}
+	}
+	
+	Barb_Dec_Sov_division_spawn_metropolis = { #Metropolis Region
+		icon = GFX_decision_generic_civil_support
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = core_states
+				
+		target_trigger = {
+			FROM = { #FROM HOOKS THE STATE
+				impassable = no
+				is_owned_by = ROOT
+				# has_state_category = megalopolis
+				OR = {
+					has_state_category = metropolis
+					state = 217 #stalingrad exception
+				}
+				# has_state_category = city
+			}
+		}
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			ROOT = { 
+				has_government = communism #This is a must, Britain must be democratic!
+				has_global_flag = Barb_Dec_Barb_started #The barb operation must have started
+			} 
+			GER = { has_government = fascism } #Germany must be fascist			
+		}
+
+		custom_cost_trigger = {
+			command_power > 29
+		}
+
+		custom_cost_text = Barb_Dec_Sov_division_spawn_metropolis_decision_cost
+
+		available = { 
+			if = { #can be fired just for once!
+				limit = {
+					FROM = { NOT = { has_state_flag = Barb_Dec_Sov_division_spawn_done } } 
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+						always = no
+					}
+				}
+			}
+
+			if = { #the enemy must be near
+				limit = {
+					FROM = { 
+						OR = {
+							any_neighbor_state = {
+								CONTROLLER = {
+									has_war_with = ROOT
+								}
+								OWNER = { tag = ROOT }
+							}
+							NOT = { is_fully_controlled_by = ROOT }
+						}
+					}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+						always = no
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -30
+
+			custom_effect_tooltip = Barb_Dec_Sov_division_spawn_metropolis_tt_01 #defined in localisation file
+			hidden_effect = {
+				FROM = { set_state_flag = Barb_Dec_Sov_division_spawn_done } #can be done just for one time
+				ROOT = {
+					division_template = {
+						name = "Defender of the Motherland"
+					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							artillery_brigade = { x = 3 y = 0 }
+							artillery_brigade = { x = 3 y = 1 }
+							artillery_brigade = { x = 3 y = 2 }
+						}
+					
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							logistics_company = { x = 0 y = 2 }
+							anti_tank = { x = 0 y = 3 }
+							anti_air = { x = 0 y = 4 }
+						}
+					}
+				}
+
+				FROM = { #creating div, already defined above
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+				}
+			}
+        }
+
+		ai_will_do = {
+			factor = 400
+
+			modifier = {
+				factor = 0
+				command_power < 85
+			}
+		}
+	}
+
+	Barb_Dec_Sov_division_spawn_city = { #Urban Region
+		icon = GFX_decision_generic_civil_support
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		target_array = core_states
+				
+		target_trigger = {
+			FROM = { #FROM HOOKS THE STATE
+				impassable = no
+				is_owned_by = ROOT
+				# has_state_category = megalopolis
+				# has_state_category = metropolis
+				has_state_category = city
+				NOT = { state = 217 } #Exception
+			}
+		}
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			ROOT = { 
+				has_government = communism #This is a must, Britain must be democratic!
+				has_global_flag = Barb_Dec_Barb_started #The barb operation must have started
+			} 
+			GER = { has_government = fascism } #Germany must be fascist			
+		}
+
+		custom_cost_trigger = {
+			command_power > 9
+		}
+
+		custom_cost_text = Barb_Dec_Sov_division_spawn_city_decision_cost
+
+		available = { 
+			if = { #can be fired just for once!
+				limit = {
+					FROM = { NOT = { has_state_flag = Barb_Dec_Sov_division_spawn_done } } 
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_01  #defined in localisation file
+						always = no
+					}
+				}
+			}
+
+			if = { #the enemy must be near
+				limit = {
+					FROM = { 
+						OR = {
+							any_neighbor_state = {
+								CONTROLLER = {
+									has_war_with = ROOT
+								}
+								OWNER = { tag = ROOT }
+							}
+							NOT = { is_fully_controlled_by = ROOT }
+						}
+					}
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Sov_division_spawn_megapolis_tt_02  #defined in localisation file
+						always = no
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			add_command_power = -10
+
+			custom_effect_tooltip = Barb_Dec_Sov_division_spawn_city_tt_01 #defined in localisation file
+			hidden_effect = {
+				FROM = { set_state_flag = Barb_Dec_Sov_division_spawn_done }
+				ROOT = {
+					division_template = {
+						name = "Defender of the Motherland"
+					
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							artillery_brigade = { x = 3 y = 0 }
+							artillery_brigade = { x = 3 y = 1 }
+							artillery_brigade = { x = 3 y = 2 }
+						}
+					
+						support = {
+							engineer = { x = 0 y = 0 }
+							recon = { x = 0 y = 1 }
+							logistics_company = { x = 0 y = 2 }
+							anti_tank = { x = 0 y = 3 }
+							anti_air = { x = 0 y = 4 }
+						}
+					}
+				}
+
+				FROM = { #creating div, already defined above
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+
+					create_unit = { 
+						division = "name = \"Defender of MOTHERLAND!\" division_template = \"Defender of the Motherland\" start_experience_factor = 0.3 start_equipment_factor = 1" 
+						owner = SOV
+					}
+				}	
+			}		
+        }
+
+		ai_will_do = {
+			factor = 200
+
+			modifier = {
+				factor = 0
+				command_power < 100
+			}
+		}
+	}
+
+	#German Decision
+	Barb_Dec_Ger_decision = {
+		icon = generic
+		allowed = {
+			always = no
+			#added through on_action
+		}
+
+		available = {
+			206 = { is_controlled_by_ROOT_or_ally = yes }
+			202 = { is_controlled_by_ROOT_or_ally = yes }
+			195 = { is_controlled_by_ROOT_or_ally = yes }
+			219 = { is_controlled_by_ROOT_or_ally = yes }
+			217 = { is_controlled_by_ROOT_or_ally = yes }
+
+			if = {
+				limit = {
+					original_tag = GER
+					NOT = { has_global_flag = Barb_Dec_Barb_End }
+				}
+
+				custom_trigger_tooltip = {
+					tooltip = Barb_Dec_Ind_tt_01
+					always = yes
+				} 
+
+				else = {
+					custom_trigger_tooltip = {
+						tooltip = Barb_Dec_Ind_tt_01
+						always = no
+					}
+				}
+			}		
+		}
+
+		days_mission_timeout = 420
+		fire_only_once = yes
+
+		activation = {
+
+		}
+
+		is_good = yes
+
+		complete_effect = { #Fail
+			custom_effect_tooltip = Barb_Dec_Ger_tt_02
+        }
+		
+		timeout_effect = { #Success
+			custom_effect_tooltip = Barb_Dec_Ger_tt_01
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}		
+}

@@ -1,0 +1,5 @@
+Barb_Dec = {
+	icon = usa_intervention_mandate
+
+	picture = GFX_Barb_Dec_decision_category_pic
+}

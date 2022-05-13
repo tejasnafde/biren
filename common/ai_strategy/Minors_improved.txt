@@ -1,0 +1,70 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+
+HUN_motorized = {
+	allowed = {
+		tag = HUN
+	}
+	enable = {
+		date > 1939.1.1
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mobile
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mobile
+		value = 8
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 20
+	}
+}
+
+generic_motorization_boost_template = {
+	allowed = {
+		NOT = {
+			OR = {
+				tag = USA
+				tag = GER
+				tag = SOV
+			}
+		}
+	}
+	enable = {
+		date > 1940.1.1
+		has_tech = motorised_infantry
+		num_of_military_factories > 30
+	}
+	abort = {
+		has_template_ai_majority_unit = motorized
+	}
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 200
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 100
+	}
+}

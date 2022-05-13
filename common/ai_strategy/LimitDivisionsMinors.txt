@@ -1,0 +1,122 @@
+###HoI4 AI Unit Production Limiter###
+###------------------------------
+###Originally made by GunnarVonPontius
+###Adapted to variables by Yard1
+###Adapted to additional fixed limits by JLMA
+###------------------------------
+###Limits the amount of divisions an AI country has to the number of mil factories it has
+###If your mod adds new unit types, make sure to add them in as well
+
+division_limiter_Minors = {
+	enable = {
+		set_temp_variable = {
+			upper_limit = num_of_military_factories
+		}
+		multiply_temp_variable = {
+			upper_limit = 1.25
+		}
+		clamp_temp_variable = {
+			var = upper_limit
+			min = 5
+			max = 30
+		}
+		NOT = {
+			original_tag = FRA
+			original_tag = ITA
+			original_tag = ENG
+			original_tag = GER
+			original_tag = POL
+			original_tag = YUG
+			original_tag = ROM
+			original_tag = SOV
+			original_tag = TUR
+			tag = USA
+			original_tag = CHI
+			original_tag = JAP
+			original_tag = RAJ
+			original_tag = CAN
+			original_tag = SPR
+			original_tag = MEX
+			original_tag = CZE
+			tag = CSA
+			original_tag = HUN
+			original_tag = BRA
+			original_tag = ARG
+		}
+		num_divisions > upper_limit
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = suppression
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = paratroopers
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineers
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = marines
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = light_armor
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = heavy_armor
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = medium_armor
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = modern_armor
+		value = -300
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -300
+	}
+
+}

@@ -1,0 +1,534 @@
+#Air unit factors
+### Industry & Production ###
+US_Air_Force_production = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		OR = {
+			has_war = yes
+			has_completed_focus = USA_air_war_plans_division
+			threat > 0.8
+		}
+	}
+	abort = {
+		AND = {
+			has_war = no
+			date > 1944.01.01
+		}
+		#threat < 0.8
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 70
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 4
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 16
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 120
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_fighter_equipment
+		value = -70
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = cv_fighter_equipment
+		value = -70
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = -20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = 50
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = 60
+	}
+}
+
+USA_Army_WW2_armored = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		date > 1942.01.01
+		OR = {
+			has_war_with = GER
+			has_war_with = SOV
+			has_war_with = ITA
+			has_war_with = ENG
+		}
+		num_of_military_factories > 100
+		has_tech = improved_medium_tank
+		has_template_ai_majority_unit = medium_armor
+	}
+	abort = {
+		OR = {
+			has_war = no
+			surrender_progress > 0.1
+		}
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 15
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_chassis
+		value = 40
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_tank
+		value = 10
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 20
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = mechanized
+		value = 20
+	}
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 100
+	}
+}
+
+USA_peace_in_our_time = {
+	allowed = {
+		tag = USA
+	}
+	enable = {
+		date < 1941.01.01
+		threat < 0.6
+		has_war = no
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio	
+		value = -90
+	}
+	
+}
+
+USA_build_more_mils = {		#USA has lots of 'free' factories from trade, no need for 1:1 ratio
+	allowed = {
+		tag = USA
+	}
+	enable = {
+		OR = {
+			threat > 0.9
+			has_war = yes
+		}
+	}
+	abort = {
+		has_war = no
+	}
+	ai_strategy = {
+		type = added_military_to_civilian_factory_ratio
+		value = 60
+	}
+}
+
+USA_build_convoys_retard = {	#without convoys, no invasions-> no help-> china dies, soviets die, europe dies, wrong
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_war = yes
+		has_equipment = {
+			convoy_1 < 550
+		}
+	}
+	abort = {
+		OR = {
+			has_equipment = {
+				convoy_1 > 700
+			}
+			has_war = no
+		}
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 30
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 15
+	}
+}
+
+rubber_sources_lost = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_tech = synth_oil_experiments
+		surrender_progress < 0.1
+		num_of_military_factories > 150
+		OR = {
+			AND = {
+				has_completed_focus = USA_rubber_reserve_company
+				threat > 0.6
+				has_war = no
+			}
+			AND = {
+				OR = {
+					JAP = { has_war_with = ENG }
+					JAP = { has_war_with = USA }
+					has_war = yes
+				}
+				date > 1942.01.01
+			}
+			OR = { 
+				336 = {
+					OR = {
+						is_controlled_by = JAP
+						is_controlled_by = SIA
+						is_controlled_by = GER
+						is_controlled_by = ITA
+					}
+				}
+				672 = {
+					OR = {
+						is_controlled_by = JAP
+						is_controlled_by = SIA
+						is_controlled_by = GER
+						is_controlled_by = ITA
+					}
+				}
+				AND = {
+					333 = {
+						OR = {
+							is_controlled_by = JAP
+							is_controlled_by = SIA
+							is_controlled_by = GER
+							is_controlled_by = ITA
+						}
+					}
+					334 = {
+						OR = {
+							is_controlled_by = JAP
+							is_controlled_by = SIA
+							is_controlled_by = GER
+							is_controlled_by = ITA
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	abort = {
+		OR = {
+			surrender_progress > 0.1
+			AND = {
+				has_war = no
+				date > 1943.01.01
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = building_target
+		id = synthetic_refinery
+		value = 15
+	}
+}
+
+### Army & Template management ###
+US_Bomb_germany = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_completed_focus = USA_strategic_bombing
+		has_war_with = GER
+		ENG = {
+			has_war_with = GER
+		}
+	}
+	abort = {
+		OR = {
+			has_war = no
+			surrender_progress > 0.1
+		}
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 50
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 35
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = 150
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = -30
+	}
+}
+
+USA_boost_med_armor_template = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_tech = improved_medium_tank
+		has_tech = mechanised_infantry
+		#NOT = { has_template_ai_majority_unit = medium_armor }
+	}
+
+	abort = {	
+		has_template_ai_majority_unit = medium_armor
+		#has_template_containing_unit = mechanized
+	}
+
+	# lets do changes more often during this period too
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 100
+	}
+	#ai_strategy = {
+	#	type = template_prio
+	#	id = light_armor
+	#	value = 100
+	#}
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 250
+	}
+}
+
+USA_time_to_reduce_light_tanks = {
+	allowed = {
+		tag = USA
+	}
+	enable = {
+		date > 1943.1.1
+		has_tech = improved_medium_tank
+		has_template_majority_unit = medium_armor
+	}
+	abort = {
+		has_tech = main_battle_tank
+		has_template_majority_unit = modern_armor
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_tank_chassis
+		value = -70
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = medium_tank_chassis
+		value = 40
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 20
+	}
+}
+
+USA_mass_motorization_boost_template = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		always = no	###disabled for now
+		date > 1942.1.1
+		has_tech = motorised_infantry
+		num_of_military_factories > 140
+	}
+	abort = {
+		has_template_ai_majority_unit = motorized
+	}
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 200
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 100
+	}
+}
+
+USA_mass_motorization_enable = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		always = no	###disabled for now
+		date > 1942.1.1
+		has_template_ai_majority_unit = motorized
+	}
+	abort = {
+		always = no
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = mobile
+		value = 20
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = -20
+	}
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 30
+	}
+}
+
+### Political & Improved Efficiency ###
+china_struggles_against_jap_USA = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		date > 1942.01.01
+		CHI = { has_war_with = JAP }
+		JAP = { has_government = fascism }
+		has_government = democratic
+		num_of_military_factories > 80
+	}
+	
+	abort = {	
+		OR = {
+			NOT = { CHI = { has_war_with = JAP } }
+			NOT = { has_government = democratic }
+			has_non_aggression_pact_with = JAP
+			AND = {
+				has_war_with = GER
+				surrender_progress > 0.2
+			}
+		}
+	}
+	ai_strategy = {
+		type = befriend
+		id = "CHI"			
+		value = 50
+	}
+	ai_strategy = {
+		type = support
+		id = "CHI"			
+		value = 190
+	}
+	
+}
+
+stop_wasting_pp_USA = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_war = yes
+	}
+	
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -80
+	}
+	
+}
+
+dont_support_Finns_USA = {
+	allowed = {
+		original_tag = USA
+	}
+	enable = {
+		has_government = democratic
+		SOV = { 
+			has_war_with = GER
+			has_war_with = FIN 
+		}
+	}
+	
+	abort = {	
+		NOT = { 
+			SOV = { has_war_with = GER }
+			SOV = { has_war_with = FIN }
+		}
+	}
+
+	ai_strategy = {
+		type = support
+		id = "FIN"			
+		value = -200
+	}
+	
+}

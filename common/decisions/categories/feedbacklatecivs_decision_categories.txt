@@ -1,0 +1,6 @@
+feedback_late_civs = {
+	icon = GFX_decision_category_generic_economy
+	visible = { has_variable = FLC_penalty }
+	visible_when_empty = yes # working solely as a GUI, no decisions used
+	priority = 1000 # pretty important
+}
