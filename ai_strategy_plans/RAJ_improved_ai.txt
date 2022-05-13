@@ -1,0 +1,51 @@
+shipbuilding_raj_ai = {
+	name = "Basic Shipbuilding program RAJ"
+	desc = ""
+
+	enable = {		
+		original_tag = RAJ
+		has_war = yes
+		date > 1942.1.1
+	}
+	abort = {
+		OR = {
+			has_war = no
+			OR = {
+				has_tech = mtg_transport
+				has_tech = transport
+			}	
+		}
+	}
+
+
+	focus_factors = {
+	
+	}
+
+	research = {
+		naval_equipment = 10
+		dd_tech = 50
+		tp_tech = 1000
+	}
+
+	ideas = {
+
+	}
+	traits = {
+
+	}
+
+	ai_strategy = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

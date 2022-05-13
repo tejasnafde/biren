@@ -1,0 +1,57 @@
+ITA_build_convoys_retard = {
+	allowed = {
+		tag = ITA
+	}
+	enable = {
+		has_war = yes
+		has_equipment = {
+			convoy_1 < 100
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 30
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 7
+	}
+}
+
+ITA_delay_greece_yug_france_first = {
+	allowed = {
+		tag = ITA
+	}
+	enable = {
+		has_war_with = FRA
+		OR = {
+			FRA = { 
+				has_capitulated = no
+			}
+			YUG = {	#Through Albania, dangerous
+				exists = yes
+				has_war = no
+			}
+		}
+	}
+	abort = {
+		OR = {
+			FRA = { has_capitulated = yes }
+			has_war = no
+		}
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "GRE"			
+		value = -1000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "YUG"			
+		value = -1000 
+	}
+}

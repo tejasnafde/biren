@@ -1,0 +1,96 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+FRA_civilian_country = {
+	allowed = {
+		tag = FRA
+	}
+	enable = {
+		date < 1938.01.01
+		has_war = no
+		threat < 0.15
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 45
+	}
+}
+
+FRA_ENG_submarines_exist = {	#ditch Poland if it's loosing (it does)
+	allowed = {
+		OR = {
+			tag = FRA
+			tag = ENG
+		}
+	}
+	enable = {
+		has_war_together_with = POL
+		has_war_with = GER
+	}
+	abort = {
+		OR = {
+			date > 1940.1.1
+			POL = { has_capitulated = yes }
+			has_capitulated = yes
+		}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "POL"
+		value = 100
+	}
+}
+
+FRA_dont_be_too_ballsy = { #Don't declare war on superior foe with this sick country
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		OR = {
+			has_idea = FRA_disjointed_government
+			has_war_support < 0.4
+			num_of_military_factories < 32
+			has_stability < 0.6
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = declare_war
+		id = "ENG"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "ITA"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "GER"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "SOV"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "USA"			
+		value = -2000 
+	}
+}
