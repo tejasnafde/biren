@@ -1,0 +1,3 @@
+﻿l_english:
+ feedback_late_civs: "$MODIFIER_CONSUMER_GOODS_FACTOR$ Penalty"
+ feedback_late_civs_desc: "We currently have over §H250 $industrial_complex_plural$§!. For each §HCivilian Factory§! above §H250§!, we will get §H0.5% $MODIFIER_CONSUMER_GOODS_FACTOR$§!, up to §H50%§!.\n§CThis penalty is updated weekly.§!\n\n$MODIFIER_CONSUMER_GOODS_FACTOR$: [?FLC_penalty|%Y1]"

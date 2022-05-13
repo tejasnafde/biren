@@ -1,0 +1,97 @@
+﻿l_english:
+ #Soviet Ideas
+ Barb_Dec_Sov_AI_buff_static:0 "§R(Barbarossa Decisions MOD)§! Soviet AI War Buff"
+ Barb_Dec_Sov_AI_buff_static_desc:0 "This Buff has been added because this nation is controlled by AI. Since the Player always plays better than AI, AI needs to be buffed to make a better game experience for the Player.\n\n§YThis buff will remain as long as this nation is controlled by AI and the Barbarossa Operation is active.§!"
+ Barb_Dec_Sov_AI_buff_dynamic:0 "§R(Barbarossa Decisions MOD)§! Soviet AI Temporary DeBuff Limiter"
+ Barb_Dec_Sov_AI_buff_dynamic_desc:0 "This Buff has been added because this nation is controlled by AI. Since the Player always plays better than AI, AI needs to be buffed to make a better game experience for the Player."
+ Barb_Dec_Sov_War_Effort:0 "§R(Barbarossa Decisions MOD)§! Soviet War Efforts"
+ Barb_Dec_Sov_War_Effort_desc:0 "The surprise attack of the Germans shocked the Union. Soviet people are desperate now, and they will do whatever is necessary to stop their motherland from being exploited."
+ Barb_Dec_Sov_Red_Army_has_been_destroyed:0 "§R(Barbarossa Decisions MOD)§! Red Army has been Destroyed!"
+ Barb_Dec_Sov_Red_Army_has_been_destroyed_desc:0 "The order in the Red Army is broken. From this point, no one knows there will ever be any chance to recover the order in the red army. The fate of the Union is sinking, and no one is able to stop that from happening..."
+ Barb_Dec_Sov_Chaos_in_Red_Army:0 "§R(Barbarossa Decisions MOD)§! Chaos in Red Army!"
+ Barb_Dec_Sov_Chaos_in_Red_Army_desc:0 "After suprise attack of Germany, the Union is in state of shock right now..."
+ Barb_Dec_Sov_Reorganization_in_Red_Army:0 "§R(Barbarossa Decisions MOD)§! Red Army is reorganizing"
+ Barb_Dec_Sov_Reorganization_in_Red_Army_desc:0 "After the first shock, the Red Army managed to stop the invasion of the Germans. Right now, Red Army is reorganizing..."
+ Barb_Dec_Sov_Reorganized_Red_Army:0 "§R(Barbarossa Decisions MOD)§! Red Army has organized!"
+ Barb_Dec_Sov_Reorganized_Red_Army_desc:0 "The Red Army has finished reorganizing. Now, they are ready to repel the Germans!"
+ Barb_Dec_Sov_tt_01:0 "\nIncreases §YSurrender Limit§! of this §YNation§!. '§YCollaboration government§!' mechanic will §Rnot work§! on this §Ynation§!. §GIt is advised that§! §Rdon't try to use§! '§YCollaboration government§!' on this §Ynation§!." #Soviet war effort
+ 
+ #German Ideas
+ Barb_Dec_Ger_AI_buff_static:0 "§R(Barbarossa Decisions MOD)§! German AI War Buff"
+ Barb_Dec_Ger_AI_buff_static_desc:0 "This Buff has been added because this nation is controlled by AI. Since the Player always plays better than AI, AI needs to be buffed to make a better game experience for the Player.\n\n§YThis buff will remain as long as this nation is controlled by AI and the Barbarossa Operation is active.§!"
+ Barb_Dec_Ger_AI_buff_dynamic:0 "§R(Barbarossa Decisions MOD)§! German AI Temporary Buff Increase"
+ Barb_Dec_Ger_AI_buff_dynamic_desc:0 "This Buff has been added because this nation is controlled by AI. Since the Player always plays better than AI, AI needs to be buffed to make a better game experience for the Player."
+ Barb_Dec_Ger_War_Effort:0 "§R(Barbarossa Decisions MOD)§! German War Efforts"
+ Barb_Dec_Ger_War_Effort_desc:0 "Capituleren? Nein!"
+ Barb_Dec_Ger_Blitzkrieg:0 "§R(Barbarossa Decisions MOD)§! Blitzkrieg!"
+ Barb_Dec_Ger_Luftwaffe:0 "§R(Barbarossa Decisions MOD)§! Luftwaffe superiority!"
+ 
+ #Decision Category
+ Barb_Dec:0 "§R Barbarossa Decisions §!"
+ Barb_Dec_desc:0 "In this branch, you'll see the barbarossa missions for both Germany And Soviets."
+ 
+ #Soviet Decisions
+ Barb_Dec_Sov_decision_I:0 "Shock in Red Army!"
+ Barb_Dec_Sov_decision_I_desc:0 "Red army is in a state of shock right now, it'll need time to recover."
+ Barb_Dec_Sov_decision_II:0 "Reorganization in the Red Army"
+ Barb_Dec_Sov_decision_II_desc:0 "Red Army has managed to stop the enemy! Hopefully, it will recover and repell the enemy!" 
+ Barb_Dec_Sov_division_spawn_megapolis:0 "Spawn Defenders in §C[?FROM.GetName]§! State"
+ Barb_Dec_Sov_division_spawn_megapolis_desc:0 "This is a division spawner decision. You can do this just once for every eligible state. Eligible state means:the state must be your core state. Additionally, you must control the state but at the same time, one of the neighbor states of the state should be controlled by the enemy. So, the enemy must be near!\n\nAnd you get different amount of divisions depending on the state's category. Megapolis states will get max divisions (example:Moscow)\n\nAs for the effects of this decision:in exchange for 60 command power, you'll get professional 27 combat with (9 inf+3art, 5 support companies including anti-tank + anti-air) in this state. AI will use these decisions whenever it gets a chance."
+ Barb_Dec_Sov_division_spawn_metropolis:0 "Spawn Defenders in §G[?FROM.GetName]§! State"
+ Barb_Dec_Sov_division_spawn_metropolis_desc:0 "This is a division spawner decision. You can do this just once for every eligible state. Eligible state means:the state must be your core state. Additionally, you must control the state but at the same time, one of the neighbor states of the state should be controlled by the enemy. So, the enemy must be near!\n\nAnd you get different amount of divisions depending on the state's category. Megapolis states will get max divisions (example:Moscow)\n\nException:Stalingrad will get the same amount divisions as Leningrad regardless of its state category type.\n\nAs for the effects of this decision:in exchange for 30 command power, you'll get professional 27 combat with (9 inf+3art, 5 support companies including anti-tank + anti-air) in this state. AI will use these decisions whenever it gets a chance."
+ Barb_Dec_Sov_division_spawn_city:0 "Spawn Defenders in §Y[?FROM.GetName]§! State"
+ Barb_Dec_Sov_division_spawn_city_desc:0 "This is a division spawner decision. You can do this just once for every eligible state. Eligible state means:the state must be your core state. Additionally, you must control the state but at the same time, one of the neighbor states of the state should be controlled by the enemy. So, the enemy must be near!\n\nAnd you get different amount of divisions depending on the state's category. Megapolis states will get max divisions (example:Moscow)\n\nAs for the effects of this decision:in exchange for 10 command power, you'll get professional 27 combat with (9 inf+3art, 5 support companies including anti-tank + anti-air) in this state. AI will use these decisions whenever it gets a chance."
+
+ #Soviet Decision Tooltips
+ Barb_Dec_Sov_division_spawn_megapolis_decision_cost:0 "£command_power  §Y60§!"
+ Barb_Dec_Sov_division_spawn_megapolis_decision_cost_blocked:0 "£command_power  §Y60§!"
+ Barb_Dec_Sov_division_spawn_metropolis_decision_cost:0 "£command_power  §Y30§!"
+ Barb_Dec_Sov_division_spawn_metropolis_decision_cost_blocked:0 "£command_power  §Y30§!"
+ Barb_Dec_Sov_division_spawn_city_decision_cost:0 "£command_power  §Y10§!"
+ Barb_Dec_Sov_division_spawn_city_decision_cost_blocked:0 "£command_power  §Y10§!"
+ Barb_Dec_Sov_division_spawn_megapolis_tt_01:0 "You can spawn divisions only once for each eligible state"
+ Barb_Dec_Sov_division_spawn_megapolis_tt_02:0 "The enemy is near"
+ Barb_Dec_Sov_division_spawn_megapolis_tt_03:0 "Spawn §Y12 Defender Divisions§! in §Y[?FROM.GetName]§! State. These divisions will include 9 infantry + 3 artillery battalion. Additionally, they will include:engineer, recon, logistics, anti-tank and anti-air support companies. They will be experienced divisions and they will have full equipment."
+ Barb_Dec_Sov_division_spawn_metropolis_tt_01:0 "Spawn §Y6 Defender Divisions§! in §Y[?FROM.GetName]§! State. These divisions will include 9 infantry + 3 artillery battalion. Additionally, they will include:engineer, recon, logistics, anti-tank and anti-air support companies. They will be experienced divisions and they will have full equipment."
+ Barb_Dec_Sov_division_spawn_city_tt_01:0 "Spawn §Y2 Defender Divisions§! in §Y[?FROM.GetName]§! State. These divisions will include 9 infantry + 3 artillery battalion. Additionally, they will include:engineer, recon, logistics, anti-tank and anti-air support companies. They will be experienced divisions and they will have full equipment."
+ 
+ #German Decisions
+ Barb_Dec_Ger_decision:0 "War on the East!"
+ Barb_Dec_Ger_decision_desc:0 "The events during WW2 brought the two superpowers into a life-or-death conflict. This conflict will determine the future of these two superpowers. Right now, the German Army marching willingly towards Russia, but; who knows, things may get harsh and complicated..."
+ Barb_Dec_Ger_tt_01:0 "§RIf we can't manage to capture important cities at the time before Read Army get organized, the Soviets will get buffs, and, that could negatively affect the course of the operation!§!" #Fail
+ Barb_Dec_Ger_tt_02:0 "§CIf we manage to capture important cities, the Soviets will get harsh debuffs, and, that will make our invasion even easier!§!" #Success
+ Barb_Dec_Ger_tt_03:0 "\nIncreases §YSurrender Limit§! of this §YNation§!. '§YCollaboration government§!' mechanic will §Rnot work§! on this §Ynation§!. §GIt is advised that§! §Rdon't try to use§! '§YCollaboration government§!' on this §Ynation§!." #German war effort
+ 
+ #Independent Tooltip
+ Barb_Dec_Ind_tt_01:0 "The §YWW2§! (§LGerman-Soviet Conflict§!) is not ended"
+ 
+ #Events DESCRIPTION
+ Barb_Dec_event.2.d:0 "Operation Barbarossa has been commenced. The German army is marching towards Russia. Fatherland is invading Motherland. The bloodiest war of humanity ever seen is being taken place on the eastern front..."
+ Barb_Dec_news_event.1.d:0 "German army marches to cut off the Leningrad supply line. This city has ideological importance for the Union. It is falling on the enemy's hand would result in catastrophic results. Hard times are coming for the Soviet Union."
+ Barb_Dec_news_event.2.d:0 "German army marches to capture Moscow, the capital of the Union. This move results from the psychological importance of the city. If they succeed, the Union will be affected badly on logistics and psychological warfare."
+ Barb_Dec_news_event.3.d:0 "the German Army diverted its focus on Stalingrad. This maneuver mostly results from the necessity of cutting the oil line of the Union to gain the initiative in the war. The two sides are in a full-scale war. Sadly, the dark side of the war looms over on civilians most."
+
+ #Events TITLE
+ Barb_Dec_event.2.t:0 "Operation Barbarossa"
+ Barb_Dec_event.3.t:0 "Siege of Leningrad" #NEW
+ Barb_Dec_event.4.t:0 "Battle of Moscow" #NEW
+ Barb_Dec_event.5.t:0 "Battle of Stalingrad" #NEW
+ Barb_Dec_news_event.1.t:0 "Siege of Leningrad begins"
+ Barb_Dec_news_event.2.t:0 "Battle of Moscow begins"
+ Barb_Dec_news_event.3.t:0 "Battle of Stalingrad begins"
+
+ #Events OPTION TITLE
+ Barb_Dec_event.2.a:0 "Forward Hans, we need to take them down fast!"
+ Barb_Dec_event.2.b:0 "Defend the motherland whatever for the cost comrade!"
+ Barb_Dec_event.3.a:0 "okay" #NEW
+ Barb_Dec_event.4.a:0 "okay" #NEW
+ Barb_Dec_event.5.a:0 "okay" #NEW
+ Barb_Dec_news_event.1.a:0 "Oh no, things are getting dire!"
+ Barb_Dec_news_event.1.b:0 "Come on Hans! You can do better!"
+ Barb_Dec_news_event.1.c:0 "You see Ivan, you can not let them capture our mighty Leningrad"
+ Barb_Dec_news_event.2.a:0 "The fate of the eastern front is being determined..."
+ Barb_Dec_news_event.2.b:0 "March march march!"
+ Barb_Dec_news_event.2.c:0 "Ivan! Push them back where they came from!"
+ Barb_Dec_news_event.3.a:0 "Last stand of the Potato farmers..."
+ Barb_Dec_news_event.3.b:0 "We must cut off the oil supply route of the USSR if we want to win the war."
+ Barb_Dec_news_event.3.c:0 "Give them hell comrade!"

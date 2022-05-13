@@ -1,0 +1,45 @@
+﻿###########################
+# Event for USA to switch economy mode (can't be done otherwise as of now)
+###########################
+
+add_namespace = aieconomyfix
+
+# USA Free to Export economy switcher
+country_event = {
+	id = aieconomyfix.1
+	picture = GFX_report_event_military_planning
+	title = aieconomyfix.1.t
+	desc = aieconomyfix.1.d
+	
+	trigger = {
+		original_tag = USA
+		is_ai = yes
+		has_idea = free_trade
+		has_political_power > 110
+		#has_government = democracy
+		num_of_military_factories > 150
+		has_manpower > 300000	#to not kick ai when it's saving for manpower
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+			has_war_with = ENG
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	#fire_only_once = yes	probably can't fire more than once anyway, but what if...
+	
+	option = {	#yes
+		name = aieconomyfix.1.a
+		ai_chance = { factor = 100 }
+		add_ideas = export_focus
+		add_political_power = -150
+	}
+	option = {	#no
+		name = aieconomyfix.1.b
+		ai_chance = { 
+			factor = 0
+		}
+	}
+}

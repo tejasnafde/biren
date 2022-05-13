@@ -1,0 +1,94 @@
+spriteTypes = {	
+	#Ideas
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Husky_Allied_bonus_on_Italy"
+		texturefile = "gfx/interface/ideas/idea_generic_reserve_divisions.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Husky_Allied_invasion_bonus"
+		texturefile = "gfx/interface/ideas/idea_cze_planning_bonus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Husky_Italy_debuff"
+		texturefile = "gfx/interface/ideas/idea_chi_incompetent_officers.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Allies_Operation_DDay_bonus_over_Germany"
+		texturefile = "gfx/interface/ideas/idea_generic_reserve_divisions.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Allies_Operation_DDay_invasion_bonus"
+		texturefile = "gfx/interface/ideas/idea_cze_planning_bonus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Battle_of_Britain_ENG_passive_bonus"
+		texturefile = "gfx/interface/ideas/Atlantic_FD_Battle_of_Britain_ENG_passive_bonus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Battle_of_Britain_ENG_lost_hope"
+		texturefile = "gfx/interface/ideas/anti_soviet_pact.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Battle_of_Britain_ENG_stand"
+		texturefile = "gfx/interface/ideas/idea_eng_the_sun_never_sets.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_German_Sealion"
+		texturefile = "gfx/interface/ideas/Atlantic_FD_German_Sealion.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Atlantic_FD_Battle_of_Britain_ENG_wont_capitulate"
+		texturefile = "gfx/interface/ideas/idea_eng_the_kings_party.dds" 
+	}
+
+	#Decision Categories
+	spriteType = {
+		name = "GFX_Atlantic_FD_decision_category_pic"
+		texturefile = "gfx/interface/decisions/Atlantic_FD_decision_category_pic.dds"
+	}
+
+	#Event
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_02"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_02.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_03"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_03.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_04"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_04.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_05"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_05.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_06"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_06.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_07"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_07.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Atlantic_FD_news_event_08"
+		texturefile = "gfx/event_pictures/Atlantic_FD_news_event_08.dds"
+	}
+}

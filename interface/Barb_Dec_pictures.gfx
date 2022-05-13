@@ -1,0 +1,89 @@
+spriteTypes = {	
+	#Soviet Branch
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_AI_buff_static"
+		texturefile = "gfx/interface/ideas/FRA_scw_intervention_nationalists_focus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_AI_buff_dynamic"
+		texturefile = "gfx/interface/ideas/FRA_scw_intervention_nationalists_focus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_War_Effort"
+		texturefile = "gfx/interface/ideas/FRA_scw_intervention_republicans_focus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_Red_Army_has_been_destroyed"
+		texturefile = "gfx/interface/ideas/idea_prc_the_long_march2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_Chaos_in_Red_Army"
+		texturefile = "gfx/interface/ideas/idea_chi_incompetent_officers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_Reorganization_in_Red_Army"
+		texturefile = "gfx/interface/ideas/idea_saf_soviet_advisers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Sov_Reorganized_Red_Army"
+		texturefile = "gfx/interface/ideas/idea_generic_acquire_tanks.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Ger_AI_buff_static"
+		texturefile = "gfx/interface/ideas/FRA_scw_intervention_nationalists_focus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Ger_AI_buff_dynamic"
+		texturefile = "gfx/interface/ideas/FRA_scw_intervention_nationalists_focus.dds" 
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Ger_War_Effort"
+		texturefile = "gfx/interface/ideas/FRA_national_mobilization_focus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Ger_Blitzkrieg"
+		texturefile = "gfx/interface/ideas/FRA_motorized_focus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_Barb_Dec_Ger_Luftwaffe"
+		texturefile = "gfx/interface/ideas/air_support_focus.dds"
+	}
+
+	#event
+	spriteType = {
+		name = "GFX_Barb_Dec_event_01"
+		texturefile = "gfx/event_pictures/Barb_Dec_event_01.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Barb_Dec_news_event_01"
+		texturefile = "gfx/event_pictures/Barb_Dec_news_event_01.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Barb_Dec_news_event_02"
+		texturefile = "gfx/event_pictures/Barb_Dec_news_event_02.dds"
+	}
+
+	spriteType = {
+		name = "GFX_Barb_Dec_news_event_03"
+		texturefile = "gfx/event_pictures/Barb_Dec_news_event_03.dds"
+	}
+
+	#decision category
+	spriteType = {
+		name = "GFX_Barb_Dec_decision_category_pic"
+		texturefile = "gfx/interface/decisions/Barb_Dec_decision_category_pic.dds"
+	}
+}

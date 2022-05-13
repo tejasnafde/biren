@@ -1,0 +1,193 @@
+﻿l_english:
+
+##Party Emblem Mod
+ TAN_communism_party:0 "TPRP"
+ TAN_communism_party_long:0 "Tuvan People's Revolutionary Party"
+ 
+ SER_communism_party:0 "SKS"
+ SER_communism_party_long:0 "Savez komunista Srbije" #League of Communists of Serbia
+ 
+ SWE_communism_party:0 "Socialistiska partiet" #Socialist Party
+ SWE_communism_party_long:0 "Socialistiska partiet"
+ 
+ CAN_fascism_party:0 "NSCP"
+ CAN_fascism_party_long:0 "National Social Christian Party"
+ 
+ SPR_fascism_party:0 "CEDA" #fix PEM's override with 1.9 change
+ SPR_fascism_party_long:0 "Confederación Española de Derechas Autónomas" #fix PEM's override with 1.9 change
+ 
+ POR_neutrality_party:0 "UN" #fix PEM's override with 1.9 change
+ 
+ BRM_neutrality_party:0 "Poor Man's Party"
+
+ BEL_neutrality_party:0 "National Royalist Movement"
+ BEL_neutrality_party_long:0 "National Royalist Movement"
+
+ GER_communism_party_long:0 "Kommunistische Partei Deutschlands"
+ SOV_fascism_party_long:0 "Russian Fascist Party"
+ ENG_communism_party_long:0 "Communist Party of Great Britain"
+ 
+ WGR_neutrality_party:0 "WAV"
+ WGR_neutrality_party_long:0 "Economic Reconstruction Union"
+ WGR_communism_party:0 "KPD"
+ WGR_communism_party_long:0 "Kommunistische Partei Deutschlands"
+ WGR_democratic_party:0 "CDU/CSU"
+ WGR_democratic_party_long:0 "Christlich Demokratische Union Deutschlands/Christlich-Soziale Union in Bayern"
+ WGR_fascism_party:0 "NPD"
+ WGR_fascism_party_long:0 "Nationaldemokratische Partei Deutschlands"
+ 
+ DDR_communism_party:0 "SED"
+ DDR_communism_party_long:0 "Sozialistische Einheitspartei Deutschlands"
+ DDR_democratic_party:0 "CDU"
+ DDR_democratic_party_long:0 "Christlich-Demokratische Union Deutschlands"
+ 
+ MEN_fascism_party:0 "MMG"
+ MEN_fascism_party_long:0 "Mongol Military Government"
+ 
+ SLV_democratic_party:0 "SLS"
+ SLV_democratic_party_long:0 "Slovenska ljudska stranka" #Slovene People's Party
+ SLV_neutrality_party:0 "SKS"
+ SLV_neutrality_party_long:0 "Slovenska kmetska stranka" #Slovene Peasant Party
+ 
+ MNT_democratic_party:0 "CFS"
+ MNT_democratic_party_long:0 "Crnogorska federalistička stranka" #Montenegrin Federalist Party
+ 
+ PAR_democratic_party:0 "Partido Liberal"
+ PAR_democratic_party_long:0 "Partido Liberal"
+ 
+##Historical Party Names
+ POL_fascism_party:0 "RNR-Falanga"
+ POL_fascism_party_long:0 "Ruch Narodowo Radykalny-Falanga"
+ POL_neutrality_party:1 "Sanacja"
+ 
+ ENG_fascism_party:0 "BUF"
+ ENG_fascism_party_long:0 "British Union of Fascists"
+ ENG_democratic_party_long:0 "Conservative and Unionist Party"
+ 
+ GER_democratic_party_long:0 "Deutsche Zentrumspartei"
+ 
+ ITA_communism_party:0 "PCI"
+ ITA_communism_party_long:0 "Partito Comunista Italiano"
+ ITA_democratic_party:0 "GL"
+ ITA_democratic_party_long:0 "Giustizia e Libertà" 
+ ITA_fascism_party:0 "PNF"
+ ITA_fascism_party_long:0 "Partito Nazionale Fascista"
+ ITA_neutrality_party:0 "Monarchists"
+ 
+ JAP_communism_party:0 "Nihon Kyōsan-tō"
+ JAP_democratic_party:0 "Rikken Minseitō"
+ JAP_fascism_party:0 "National Unity Cabinet"
+ JAP_neutrality_party_kodoha:0 "Kōdōha"
+ JAP_neutrality_party_kodoha_long:0 "Kōdōha"
+ 
+ USA_communism_party:0 "CPUSA"
+ USA_communism_party_long:0 "Communist Party of the United States of America"
+ 
+ FRA_communism_party:0 "PCF"
+ FRA_communism_party_long:0 "Parti communiste français"
+ FRA_democratic_party:0 "Parti radical"
+ FRA_democratic_party_long:0 "Parti républicain, radical et radical-socialiste"
+ FRA_fascism_party:0 "Réactionnaires"
+ FRA_fascism_party_long:0 "Réactionnaires"
+ 
+ SOV_communism_party:0 "AUCP(b)"
+ SOV_communism_party_long:0 "All-Union Communist Party (Bolsheviks)"
+ 
+ AUS_fascism_party_long:1 "Deutsche Nationalsozialistische Arbeiterpartei"
+ 
+ SAF_communism_party:0 "CPSA"
+ SAF_communism_party_long:0 "Communist Party of South Africa"
+ 
+ CZE_communism_party:0 "KSČ"
+ CZE_communism_party_long:0 "Komunistická strana Československa"
+ CZE_fascism_party:0 "NS"
+ CZE_fascism_party_long:0 "Národní souručenství"
+ 
+ MON_communism_party:0 "MPRP"
+ MON_communism_party_long:0 "Mongolian People's Revolutionary Party"
+ 
+ HUN_fascism_party:1 "NEP"
+ HUN_fascism_party_long:1 "Nemzeti Egység Pártja" 
+ HUN_arrow_cross_party:0 "NYKP"
+ HUN_democratic_party:0 "MSZDP"
+ HUN_democratic_party_long:0 "Magyarországi Szociáldemokrata Párt"
+ HUN_neutrality_party:0 "Regency"
+ HUN_neutrality_party_long:0 "Regency"
+ 
+ YUG_communism_party_long:0 "Komunistička partija Jugoslavije"
+ YUG_democratic_party_long:0 "Jugoslovenska demokratska stranka"
+ YUG_fascism_party_long:0 "Jugoslovenska radikalna zajednica"
+ 
+ SLO_fascism_party:0 "HSĽS-SSNJ"
+ SLO_fascism_party_long:0 "Hlinkova slovenská ľudová strana – Strana slovenskej národnej jednoty"
+ 
+ CRO_fascism_party_long:0 "Ustaša – Hrvatski revolucionarni pokret"
+ 
+ SPR_fascism_francoist_party:0 "FET de las JONS"
+ 
+ SIA_communism_party:0 "CPS"
+ SIA_communism_party_long:0 "Communist Party of Siam"
+ 
+#Chinese factions
+ CHI_communism_party:0 "CCP"
+ CHI_communism_party_long:0 "Chinese Communist Party"
+ CHI_democratic_party:0 "KMT"
+ CHI_democratic_party_long:0 "Kuomintang"
+ CHI_fascism_party:1 "KMT-R"
+ CHI_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ CHI_neutrality_party:0 "KMT-W"
+ CHI_neutrality_party_long:0 "Kuomintang - Whampoa Clique"
+ 
+ XSM_communism_party:0 "CCP"
+ XSM_communism_party_long:0 "Chinese Communist Party"
+ XSM_democratic_party:0 "KMT"
+ XSM_democratic_party_long:0 "Kuomintang"
+ XSM_fascism_party:1 "KMT-R"
+ XSM_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ XSM_neutrality_party:0 "KMT-M"
+ XSM_neutrality_party_long:0 "Kuomintang - Ma Clique"
+ 
+ SIK_communism_party:0 "Anti-Imperialist Association"
+ SIK_communism_party_long:0 "Sinkiang People's Anti-Imperialist Association"
+ SIK_democratic_party:0 "KMT"
+ SIK_democratic_party_long:0 "Kuomintang"
+ SIK_fascism_party:1 "KMT-R"
+ SIK_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ SIK_neutrality_party:0 "KMT-S"
+ SIK_neutrality_party_long:0 "Kuomintang - Sinkiang Clique"
+ 
+ YUN_communism_party:0 "CCP"
+ YUN_communism_party_long:0 "Chinese Communist Party"
+ YUN_democratic_party:0 "KMT"
+ YUN_democratic_party_long:0 "Kuomintang"
+ YUN_fascism_party:1 "KMT-R"
+ YUN_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ YUN_neutrality_party:0 "KMT-Y"
+ YUN_neutrality_party_long:0 "Kuomintang - Yunnan Clique"
+
+ PRC_democratic_party:0 "China Democratic League"
+ PRC_democratic_party_long:0 "China Democratic League"
+ PRC_communism_party:0 "CCP"
+ PRC_communism_party_long:0 "Chinese Communist Party"
+ 
+ SHX_communism_party:0 "CCP"
+ SHX_communism_party_long:0 "Chinese Communist Party"
+ SHX_democratic_party:0 "KMT"
+ SHX_democratic_party_long:0 "Kuomintang"
+ SHX_fascism_party:1 "KMT-R"
+ SHX_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ SHX_neutrality_party:0 "KMT-S"
+ SHX_neutrality_party_long:0 "Kuomintang - Shanxi Clique"
+ 
+ GXC_communism_party:0 "CCP"
+ GXC_communism_party_long:0 "Chinese Communist Party"
+ GXC_democratic_party:0 "KMT"
+ GXC_democratic_party_long:0 "Kuomintang"
+ GXC_fascism_party:1 "KMT-R"
+ GXC_fascism_party_long:1 "Kuomintang - Right-Wing Clique"
+ GXC_neutrality_party:0 "KMT-G"
+ GXC_neutrality_party_long:0 "Kuomintang - New Guangxi Clique"
+ 
+ MAN_fascism_party:0 "Concordia Association"
+ MAN_fascism_party_long:0 "Concordia Association of Manchukuo"
+ 
