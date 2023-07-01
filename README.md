@@ -1,2 +1,2 @@
 # biren
-hoi4 mod
+A custom mod for the grand strategy game Hearts of Iron 4.
